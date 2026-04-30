@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>FocusCard — A focus app for iOS</title>
-<meta name="description" content="The thing you're trying to do, on the only screen you can't put down. A digital index card for iOS that puts one task — huge — on your screen and Lock Screen. Built for deep work, ADHD focus, and single-task work.">
+<meta name="description" content="You sit down to do one thing. Twenty minutes later you're three apps deep. FocusCard puts that one thing — huge on your screen, also on your Lock Screen — and keeps it there. Built for deep work, ADHD focus, and single-task work.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body class="landing">
@@ -22,18 +22,40 @@
     <div class="lp-hero-text">
       <p class="lp-eyebrow">A focus app for iOS</p>
       <h1 class="lp-headline">
-        The thing you're trying to do.
-        <em>The only thing on your screen.</em>
+        You sit down to do one thing.
+        <em>Twenty minutes later, you're three apps deep.</em>
       </h1>
-      <p class="lp-sub">You sit down to do one thing. Twenty minutes later you're three apps deep wondering why. FocusCard puts that one thing — huge on your screen, also on your Lock Screen — and nothing else.</p>
-      <p class="lp-audience">Built for <strong>deep work</strong>, <strong>ADHD focus</strong>, and anyone who's ever propped a sticky note next to their laptop.</p>
+      <p class="lp-sub">FocusCard puts that one thing — huge on your screen, also on your Lock Screen — and keeps it there until you mark it done. So when you reach for your phone, the only thing it shows you is the thing you're trying to do.</p>
+      <p class="lp-audience">Built for <strong>deep work</strong>, <strong>ADHD focus</strong>, and anyone who's ever taped a sticky note to their laptop.</p>
     </div>
+
     <div class="lp-hero-mock">
-      <div class="phone">
-        <div class="phone-screen">
-          <div class="phone-stripe"></div>
-          <div class="phone-card-text">Draft article opening</div>
-          <div class="phone-pause">TAP TO PAUSE</div>
+      <div class="phone-stack">
+        <!-- Focus card (front) -->
+        <div class="phone phone-focus">
+          <div class="phone-screen">
+            <div class="phone-stripe"></div>
+            <div class="phone-card-text">Draft article opening</div>
+            <div class="phone-pause">TAP TO PAUSE</div>
+          </div>
+        </div>
+
+        <!-- Lock Screen with Live Activity (behind, slight tilt) -->
+        <div class="phone phone-sm phone-lockscreen">
+          <div class="phone-screen">
+            <div class="ls-time">9:41</div>
+            <div class="ls-date">Wednesday, April 30</div>
+            <div class="live-activity">
+              <span class="la-stripe"></span>
+              <div class="la-content">
+                <div class="la-row">
+                  <span class="la-pill"><span class="la-dot"></span>FOCUSING</span>
+                  <span class="la-timer">12:34</span>
+                </div>
+                <div class="la-title">Draft article opening</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -68,10 +90,50 @@
   </div>
 </section>
 
+<section class="lp-section lp-story">
+  <div class="lp-section-inner">
+    <h2 class="lp-section-title">From my desk</h2>
+
+    <div class="lp-story-grid">
+      <div>
+        <p>For a year, I had a stack of 3×5 index cards on my desk. Every morning I'd write the one thing I most needed to do that day, in big letters, and prop it next to my laptop. When I drifted, the card was right there — louder than any notification.</p>
+        <p>The problem was the cards. They went missing. Or I'd start work somewhere else and not have them. Or write the task on my phone first and forget to write it on a card.</p>
+      </div>
+      <!-- Drop your photo at: docs/assets/cards.jpg (≥1200×900, jpg) -->
+      <!-- Then replace this entire <figure> with: <figure class="lp-photo"><img src="assets/cards.jpg" alt="A stack of index cards on a wooden desk"></figure> -->
+      <figure class="lp-photo">
+        <span class="lp-photo-hint">
+          Photo: index cards
+          <code>assets/cards.jpg</code>
+        </span>
+      </figure>
+    </div>
+
+    <div class="lp-story-grid reverse">
+      <div>
+        <p>So I built FocusCard. Same idea, on the device I always have with me. Pick a reminder, see it big, prop the phone next to the laptop. The Lock Screen carries the same task whenever the screen is off.</p>
+        <p>I use it every day. The screen-stays-awake feature isn't a setting — it's the whole point. The card on my desk never went to sleep either.</p>
+      </div>
+      <!-- Drop your photo at: docs/assets/desk.jpg (≥1600×1200, jpg) -->
+      <!-- Then replace this entire <figure> with: <figure class="lp-photo"><img src="assets/desk.jpg" alt="Author's desk with iPhone running FocusCard propped next to a laptop"></figure> -->
+      <figure class="lp-photo">
+        <span class="lp-photo-hint">
+          Photo: desk setup
+          <code>assets/desk.jpg</code>
+        </span>
+      </figure>
+    </div>
+
+    <div class="lp-story-callout">
+      <p>This sentence was written with a focus card on my Lock Screen.</p>
+    </div>
+  </div>
+</section>
+
 <section class="lp-section" style="padding-top: 0;">
   <div class="lp-section-inner">
-    <h2 class="lp-section-title">Why this works</h2>
-    <p class="lp-why-lead">FocusCard isn't a Pomodoro timer or a habit tracker. It's a digital index card — propped where the thing you most want to ignore lives. The research is well-established:</p>
+    <h2 class="lp-section-title">The science</h2>
+    <p class="lp-why-lead">FocusCard isn't a Pomodoro timer or a habit tracker. It's a digital index card — propped where the thing you most want to ignore lives. The mechanism is well-studied:</p>
     <ul class="lp-research">
       <li>
         <strong>Attention residue</strong>

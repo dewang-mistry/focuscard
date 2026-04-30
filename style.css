@@ -341,7 +341,7 @@ body.landing { background: var(--hero-bg); }
   font-weight: 600;
 }
 
-/* ── Phone mockup (CSS-only) ───────────────────────────────────────────── */
+/* ── Phone mockups (CSS-only) ──────────────────────────────────────────── */
 
 .lp-hero-mock {
   display: flex;
@@ -349,17 +349,47 @@ body.landing { background: var(--hero-bg); }
   align-items: center;
 }
 
+/* Two-phone composition: focus-card phone in front, lock-screen phone tilted
+   behind it. Tells the whole product story in one visual. */
+.phone-stack {
+  position: relative;
+  width: 360px;
+  height: 600px;
+}
+
+.phone-stack .phone-focus {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+}
+
+.phone-stack .phone-lockscreen {
+  position: absolute;
+  right: -8px;
+  top: 80px;
+  z-index: 1;
+  transform: rotate(8deg);
+  opacity: 0.97;
+}
+
 .phone {
-  width: 280px;
-  height: 580px;
+  width: 260px;
+  height: 540px;
   background: linear-gradient(160deg, #2a2e36 0%, #14171c 100%);
-  border-radius: 44px;
+  border-radius: 42px;
   padding: 8px;
   box-shadow:
     0 40px 80px -20px rgba(0, 0, 0, 0.7),
     0 0 0 1px rgba(255, 255, 255, 0.06),
     inset 0 0 0 1px rgba(255, 255, 255, 0.04);
   position: relative;
+}
+
+.phone-sm {
+  width: 220px;
+  height: 460px;
+  border-radius: 38px;
 }
 
 .phone::before {
@@ -369,18 +399,24 @@ body.landing { background: var(--hero-bg); }
   top: 16px;
   left: 50%;
   transform: translateX(-50%);
-  width: 100px;
-  height: 30px;
+  width: 92px;
+  height: 28px;
   background: #000;
   border-radius: 20px;
   z-index: 3;
+}
+
+.phone-sm::before {
+  top: 14px;
+  width: 78px;
+  height: 24px;
 }
 
 .phone-screen {
   width: 100%;
   height: 100%;
   background: #000;
-  border-radius: 36px;
+  border-radius: 34px;
   overflow: hidden;
   position: relative;
   display: flex;
@@ -388,16 +424,19 @@ body.landing { background: var(--hero-bg); }
   justify-content: center;
 }
 
+.phone-sm .phone-screen { border-radius: 30px; }
+
 .phone-stripe {
   position: absolute;
   top: 0; left: 0; right: 0;
-  height: 6px;
+  height: 5px;
   background: var(--tint);
+  z-index: 2;
 }
 
 .phone-card-text {
   color: white;
-  font-size: 38px;
+  font-size: 36px;
   font-weight: 600;
   text-align: center;
   letter-spacing: -0.015em;
@@ -407,12 +446,107 @@ body.landing { background: var(--hero-bg); }
 
 .phone-pause {
   position: absolute;
-  bottom: 36px;
+  bottom: 32px;
   left: 0; right: 0;
   font-size: 9px;
   letter-spacing: 0.25em;
   color: rgba(255, 255, 255, 0.22);
   text-align: center;
+}
+
+/* Lock screen mockup ── time + Live Activity card */
+
+.phone-lockscreen .phone-screen {
+  background: linear-gradient(165deg, #1c2433 0%, #0a0f1a 100%);
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-top: 56px;
+  flex-direction: column;
+}
+
+.ls-time {
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 56px;
+  font-weight: 200;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin-top: 4px;
+}
+
+.ls-date {
+  width: 100%;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 12px;
+  margin-top: 6px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.live-activity {
+  position: absolute;
+  bottom: 56px;
+  left: 14px;
+  right: 14px;
+  background: rgba(0, 0, 0, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 12px 14px;
+  display: flex;
+  gap: 10px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.la-stripe {
+  width: 3px;
+  background: var(--tint);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.la-content { flex: 1; min-width: 0; }
+
+.la-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.la-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--tint);
+}
+
+.la-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--tint);
+  display: inline-block;
+}
+
+.la-timer {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 10px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.la-title {
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.005em;
 }
 
 /* ── Light sections under hero ─────────────────────────────────────────── */
@@ -520,6 +654,96 @@ body.landing { background: var(--hero-bg); }
   font-weight: 600;
 }
 
+/* From my desk — story section with photos */
+
+.lp-story-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 56px;
+  align-items: center;
+  margin-bottom: 64px;
+}
+
+.lp-story-grid:last-child { margin-bottom: 0; }
+
+.lp-story-grid.reverse { grid-template-columns: 1fr 1.1fr; }
+.lp-story-grid.reverse .lp-photo { order: -1; }
+
+.lp-story p {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--fg);
+  margin: 0 0 18px;
+  max-width: 520px;
+}
+
+.lp-story p:last-child { margin-bottom: 0; }
+
+.lp-story p em {
+  font-style: italic;
+  color: var(--muted);
+}
+
+.lp-photo {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  background: var(--accent-bg);
+  border: 1px dashed var(--border);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+  overflow: hidden;
+  margin: 0;
+}
+
+.lp-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+  position: absolute;
+  inset: 0;
+}
+
+.lp-photo-hint {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.lp-photo-hint code {
+  display: block;
+  margin-top: 6px;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.lp-story-callout {
+  margin-top: 56px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.lp-story-callout p {
+  font-size: 18px;
+  font-style: italic;
+  color: var(--muted);
+  margin: 0 auto;
+  max-width: 600px;
+}
+
 /* Footer */
 
 .lp-footer {
@@ -551,13 +775,26 @@ body.landing { background: var(--hero-bg); }
     gap: 48px;
     padding-top: 32px;
   }
-  .lp-hero-mock { order: -1; }
-  .phone { width: 240px; height: 500px; }
-  .phone-card-text { font-size: 32px; }
+  /* Text first, phone after — on mobile the headline needs to lead. */
+  .phone-stack {
+    width: 280px;
+    height: 480px;
+    margin: 0 auto;
+  }
+  .phone { width: 240px; height: 480px; }
+  .phone-sm { display: none; }   /* hide the lock-screen phone on mobile to save vertical space */
+  .phone-card-text { font-size: 30px; }
   .lp-steps { grid-template-columns: repeat(2, 1fr); }
   .lp-research { grid-template-columns: 1fr; }
   .lp-section { padding: 64px 24px; }
   .lp-hero { padding: 16px 24px 56px; }
+  .lp-story-grid,
+  .lp-story-grid.reverse {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+  .lp-story-grid.reverse .lp-photo { order: 0; }
 }
 
 @media (max-width: 520px) {
