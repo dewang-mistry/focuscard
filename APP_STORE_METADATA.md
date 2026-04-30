@@ -101,9 +101,11 @@ focus,deepwork,ADHD,singletask,onething,reminders,lockscreen,productivity,distra
 
 | Field | Value |
 |-------|-------|
-| **Support URL** | https://dewangmistry.com/focuscard/support.html |
-| **Marketing URL** | https://dewangmistry.com/focuscard/ |
-| **Privacy Policy URL** | https://dewangmistry.com/focuscard/privacy.html |
+| **Support URL** | https://focuscard.app/support.html |
+| **Marketing URL** | https://focuscard.app/ |
+| **Privacy Policy URL** | https://focuscard.app/privacy.html |
+| Domain registered through | Cloudflare Registrar ($14.20/yr at-cost, never raises) |
+| Hosted via | GitHub Pages (CNAME: focuscard.app, HTTPS auto-provisioned via .app HSTS) |
 
 ---
 

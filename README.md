@@ -10,7 +10,7 @@ Built for **deep work**, **ADHD focus**, and anyone who's ever propped a sticky 
 - **Privacy Policy** — [privacy.html](privacy.html)
 - **Support** — [support.html](support.html)
 
-Served via GitHub Pages at https://dewang-mistry.github.io/focuscard/
+Served via GitHub Pages at https://focuscard.app/
 
 ## App
 
