@@ -41,30 +41,30 @@ You sit down to do one thing — twenty minutes later you're three apps deep. Fo
 ```
 You sit down to do one thing — twenty minutes later you're three apps deep wondering why.
 
-FocusCard puts that one task, huge, on your screen and Lock Screen, and keeps it there until you mark it done. So when you reach for your phone, the only thing it shows you is the thing you're trying to do.
+FocusCard puts that one task, huge, on your screen and Lock Screen, until you mark it done. You'll still drift. The way back is one tap.
 
 Built for deep work, ADHD focus, and anyone who's ever taped a sticky note to their laptop.
 
 
 HOW IT WORKS
 • Pick one task from your iOS Reminders.
-• Tap it — the screen turns black, the title fills it.
+• Tap it. The screen turns black, the title fills it.
 • The same task lives on your Lock Screen and Dynamic Island while you work.
 • Tap "Mark Complete" when done. Tap anywhere else to pause.
 
 
-THE ESSENTIAL FEATURES
-• Reads from iOS Reminders — no extra task list to maintain
-• Grouped by Reminders list, color-coded
-• Lock Screen Live Activity with the active task title
-• Screen stays awake during focus sessions, so you can prop your phone up
-• Swipe left or long-press to mark done — with undo
-• Settings lets you choose which Reminders lists show up
-• Long-press any reminder to deep-link to it in the Reminders app
+FEATURES
+• Reads from iOS Reminders. No extra task list to maintain.
+• Grouped by Reminders list, color-coded.
+• Lock Screen Live Activity with the active task title.
+• Screen stays awake during focus sessions, so you can prop your phone up.
+• Swipe left or long-press to mark done, with undo.
+• Settings lets you choose which Reminders lists show up.
+• Long-press any reminder to deep-link to it in the Reminders app.
 
 
 WHY THIS WORKS
-FocusCard isn't a Pomodoro timer or a habit tracker. It's a digital index card — propped where the thing you most want to ignore lives. The mechanism is well-studied:
+FocusCard isn't a Pomodoro timer or a habit tracker. It's a digital index card, propped where the thing you most want to ignore lives. The research:
 
 • Attention residue (Leroy, 2009): switching tasks leaves cognitive sludge. A single visible focus reduces it.
 • The Zeigarnik effect: unfinished tasks loop in your mind until you externalize them.
@@ -76,7 +76,7 @@ FocusCard does not collect any data. No accounts. No analytics. No third parties
 
 
 BUILT BY ONE PERSON
-For a year I had a stack of 3×5 index cards on my desk. Every morning I'd write the one thing I most needed to do, in big letters, and prop it next to my laptop. The cards worked — but they kept going missing. So I built FocusCard. Same idea, on the device I always have with me.
+For a year I had a stack of 3×5 index cards on my desk. Every morning I'd write the one thing I most needed to do, in big letters, and prop it next to my laptop. The cards worked. They kept going missing. So I built FocusCard. Same idea, on the device I always have with me.
 
 — Dewang Mistry
 ```
