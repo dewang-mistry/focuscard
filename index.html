@@ -3,38 +3,102 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>FocusCard</title>
+<title>FocusCard — A focus app for iOS</title>
+<meta name="description" content="The thing you're trying to do, on the only screen you can't put down. A digital index card for iOS that puts one task — huge — on your screen and Lock Screen. Built for deep work, ADHD focus, and single-task work.">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
-<main>
-  <header class="brand">
+<body class="landing">
+
+<header class="lp-nav">
+  <a href="index.html" class="lp-brand">
     <div class="badge"><div class="card"></div></div>
-    <h1>FocusCard <span class="tagline">A focus app for iOS</span></h1>
-  </header>
+    <span>FocusCard</span>
+  </a>
+  <span class="lp-soon">Coming to the App Store</span>
+</header>
 
-  <p class="eyebrow">What it is</p>
-  <h1 class="page-title">The index card you'd write a task on, as an iOS app.</h1>
-  <p class="lead">You sit down to do one thing. Twenty minutes later you're three apps deep wondering why. FocusCard puts that one thing — huge on the screen, also on your Lock Screen — and nothing else. Because you work better when the thing you're trying to do is the only thing you can see.</p>
+<section class="lp-hero">
+  <div class="lp-hero-grid">
+    <div class="lp-hero-text">
+      <p class="lp-eyebrow">A focus app for iOS</p>
+      <h1 class="lp-headline">
+        The thing you're trying to do.
+        <em>The only thing on your screen.</em>
+      </h1>
+      <p class="lp-sub">You sit down to do one thing. Twenty minutes later you're three apps deep wondering why. FocusCard puts that one thing — huge on your screen, also on your Lock Screen — and nothing else.</p>
+      <p class="lp-audience">Built for <strong>deep work</strong>, <strong>ADHD focus</strong>, and anyone who's ever propped a sticky note next to their laptop.</p>
+    </div>
+    <div class="lp-hero-mock">
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="phone-stripe"></div>
+          <div class="phone-card-text">Draft article opening</div>
+          <div class="phone-pause">TAP TO PAUSE</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <p style="font-size: 14px; color: var(--muted); margin-top: -16px;">Built for <strong>deep work</strong>, <strong>ADHD focus</strong>, and anyone who's ever propped a sticky note next to their laptop.</p>
+<section class="lp-section">
+  <div class="lp-section-inner">
+    <h2 class="lp-section-title">How it works</h2>
+    <div class="lp-steps">
+      <div class="lp-step">
+        <span class="lp-step-num">1</span>
+        <h3>Pick one thing</h3>
+        <p>Your iOS Reminders, grouped by list. Pick the one task you want to focus on.</p>
+      </div>
+      <div class="lp-step">
+        <span class="lp-step-num">2</span>
+        <h3>See it big</h3>
+        <p>Tap the task. The screen turns black, the title fills it, everything else disappears.</p>
+      </div>
+      <div class="lp-step">
+        <span class="lp-step-num">3</span>
+        <h3>Keep it in sight</h3>
+        <p>The screen stays awake. The task lives on your Lock Screen and Dynamic Island while you work.</p>
+      </div>
+      <div class="lp-step">
+        <span class="lp-step-num">4</span>
+        <h3>Tap when done</h3>
+        <p>Mark Complete checks it off in Reminders. Tap anywhere else to pause and pick a different task.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <h2>How it works</h2>
-  <ul>
-    <li><strong>Pick one thing.</strong> Your iOS Reminders, grouped by list.</li>
-    <li><strong>See it big.</strong> Tap a task. The screen turns black, the title fills it.</li>
-    <li><strong>Keep it in sight.</strong> The screen stays awake. The task also lives on your Lock Screen and in the Dynamic Island.</li>
-    <li><strong>Tap when done.</strong> Mark Complete checks it off in Reminders; tap anywhere else to pause.</li>
-  </ul>
+<section class="lp-section" style="padding-top: 0;">
+  <div class="lp-section-inner">
+    <h2 class="lp-section-title">Why this works</h2>
+    <p class="lp-why-lead">FocusCard isn't a Pomodoro timer or a habit tracker. It's a digital index card — propped where the thing you most want to ignore lives. The research is well-established:</p>
+    <ul class="lp-research">
+      <li>
+        <strong>Attention residue</strong>
+        Switching tasks leaves cognitive sludge that hurts your performance on the next one. A single visible focus reduces it. (Leroy, 2009)
+      </li>
+      <li>
+        <strong>The Zeigarnik effect</strong>
+        Unfinished tasks loop in your mind until you externalize them. Putting the task on a card stops the loop.
+      </li>
+      <li>
+        <strong>Cognitive offloading</strong>
+        Writing a task down measurably frees working memory — your brain stops tracking it because the card is. (Risko &amp; Gilbert, 2016)
+      </li>
+    </ul>
+  </div>
+</section>
 
-  <footer>
+<footer class="lp-footer">
+  <div class="lp-footer-inner">
     <span>© 2026 Dewang Mistry</span>
     <nav>
       <a href="privacy.html">Privacy</a>
       <a href="support.html">Support</a>
-      <a href="mailto:dewang+focuscard@gmail.com">Contact</a>
+      <a href="mailto:dewang+focuscard@gmail.com">Send feedback</a>
     </nav>
-  </footer>
-</main>
+  </div>
+</footer>
+
 </body>
 </html>

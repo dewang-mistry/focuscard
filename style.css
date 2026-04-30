@@ -7,17 +7,23 @@
   --border: rgba(0, 0, 0, 0.08);
   --card: #ffffff;
   --shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 8px 24px rgba(0, 0, 0, 0.06);
+  --hero-bg: #0a0d12;
+  --hero-fg: #f6f7fa;
+  --hero-muted: rgba(246, 247, 250, 0.55);
+  --hero-dim: rgba(246, 247, 250, 0.32);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #0e1116;
+    /* Slightly lighter than --hero-bg so the landing-page sections under the
+       hero have visible contrast against it. */
+    --bg: #141823;
     --fg: #f1f2f4;
     --muted: #a0a4ae;
     --tint: #4ea0ff;
-    --accent-bg: #161a22;
+    --accent-bg: #1c2230;
     --border: rgba(255, 255, 255, 0.08);
-    --card: #161a22;
+    --card: #1c2230;
     --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.4);
   }
 }
@@ -32,6 +38,13 @@ html, body {
   font: 17px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
+
+a { color: var(--tint); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* =========================================================================
+   Sub-pages (privacy, support) — kept as the original simple layout.
+   ========================================================================= */
 
 main {
   max-width: 720px;
@@ -113,36 +126,23 @@ p.lead {
   margin: 0 0 32px;
 }
 
-h2 {
+main h2 {
   font-size: 22px;
   font-weight: 600;
   letter-spacing: -0.01em;
   margin: 40px 0 12px;
 }
 
-h3 {
+main h3 {
   font-size: 17px;
   font-weight: 600;
   margin: 28px 0 6px;
 }
 
-p {
-  margin: 0 0 16px;
-}
+main p { margin: 0 0 16px; }
 
-ul {
-  padding-left: 20px;
-  margin: 0 0 16px;
-}
-
-ul li { margin-bottom: 6px; }
-
-a {
-  color: var(--tint);
-  text-decoration: none;
-}
-
-a:hover { text-decoration: underline; }
+main ul { padding-left: 20px; margin: 0 0 16px; }
+main ul li { margin-bottom: 6px; }
 
 .card-block {
   background: var(--accent-bg);
@@ -160,7 +160,7 @@ a:hover { text-decoration: underline; }
   margin-bottom: 4px;
 }
 
-footer {
+main > footer {
   margin-top: 64px;
   padding-top: 24px;
   border-top: 1px solid var(--border);
@@ -172,10 +172,398 @@ footer {
   justify-content: space-between;
 }
 
-footer nav { display: flex; gap: 16px; }
+main > footer nav { display: flex; gap: 16px; }
 
 @media (max-width: 480px) {
   main { padding: 36px 18px 64px; }
   h1.page-title { font-size: 28px; }
   p.lead { font-size: 17px; }
+}
+
+/* =========================================================================
+   Landing page (index.html) — dark hero, phone mockup, then light sections.
+   All classes prefixed `.lp-` so they don't bleed into privacy/support pages.
+   ========================================================================= */
+
+body.landing { background: var(--hero-bg); }
+
+.lp-nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.lp-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--hero-fg);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+}
+
+.lp-brand:hover { text-decoration: none; }
+
+.lp-brand .badge {
+  width: 36px;
+  height: 36px;
+  background: var(--tint);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.lp-brand .badge .card {
+  width: 22px;
+  height: 14px;
+  background: white;
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+}
+
+.lp-brand .badge .card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--tint);
+}
+
+.lp-soon {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  color: var(--hero-fg);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.lp-soon::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #34c759;
+  box-shadow: 0 0 0 4px rgba(52, 199, 89, 0.18);
+}
+
+/* ── Hero ──────────────────────────────────────────────────────────────── */
+
+.lp-hero {
+  background: var(--hero-bg);
+  color: var(--hero-fg);
+  padding: 24px 32px 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.lp-hero::before {
+  /* Subtle radial glow under the phone mockup — gives the dark hero some depth. */
+  content: "";
+  position: absolute;
+  top: 30%; right: -10%;
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(0, 122, 255, 0.18) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.lp-hero-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 60px;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.lp-eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--tint);
+  margin: 0 0 24px;
+}
+
+.lp-headline {
+  font-size: clamp(40px, 6vw, 76px);
+  font-weight: 700;
+  line-height: 1.04;
+  letter-spacing: -0.025em;
+  margin: 0 0 28px;
+  color: var(--hero-fg);
+}
+
+.lp-headline em {
+  display: block;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--hero-muted);
+  margin-top: 6px;
+}
+
+.lp-sub {
+  font-size: 19px;
+  line-height: 1.6;
+  color: var(--hero-muted);
+  margin: 0 0 24px;
+  max-width: 560px;
+}
+
+.lp-audience {
+  font-size: 14px;
+  color: var(--hero-dim);
+  margin: 0;
+  max-width: 540px;
+  line-height: 1.55;
+}
+
+.lp-audience strong {
+  color: var(--hero-muted);
+  font-weight: 600;
+}
+
+/* ── Phone mockup (CSS-only) ───────────────────────────────────────────── */
+
+.lp-hero-mock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.phone {
+  width: 280px;
+  height: 580px;
+  background: linear-gradient(160deg, #2a2e36 0%, #14171c 100%);
+  border-radius: 44px;
+  padding: 8px;
+  box-shadow:
+    0 40px 80px -20px rgba(0, 0, 0, 0.7),
+    0 0 0 1px rgba(255, 255, 255, 0.06),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+  position: relative;
+}
+
+.phone::before {
+  /* Dynamic Island */
+  content: "";
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 30px;
+  background: #000;
+  border-radius: 20px;
+  z-index: 3;
+}
+
+.phone-screen {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  border-radius: 36px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.phone-stripe {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 6px;
+  background: var(--tint);
+}
+
+.phone-card-text {
+  color: white;
+  font-size: 38px;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: -0.015em;
+  line-height: 1.12;
+  padding: 0 22px;
+}
+
+.phone-pause {
+  position: absolute;
+  bottom: 36px;
+  left: 0; right: 0;
+  font-size: 9px;
+  letter-spacing: 0.25em;
+  color: rgba(255, 255, 255, 0.22);
+  text-align: center;
+}
+
+/* ── Light sections under hero ─────────────────────────────────────────── */
+
+.lp-section {
+  background: var(--bg);
+  color: var(--fg);
+  padding: 96px 32px;
+}
+
+.lp-section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.lp-section-title {
+  font-size: clamp(28px, 3.4vw, 40px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 48px;
+  color: var(--fg);
+}
+
+/* How it works — 4 numbered cards */
+
+.lp-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.lp-step {
+  background: var(--accent-bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lp-step-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--tint);
+  color: white;
+  font-weight: 700;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+}
+
+.lp-step h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: -0.01em;
+  color: var(--fg);
+}
+
+.lp-step p {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+/* Why this works */
+
+.lp-why-lead {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0 0 28px;
+  max-width: 720px;
+}
+
+.lp-research {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.lp-research li {
+  background: var(--accent-bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 22px 22px;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.lp-research li strong {
+  display: block;
+  color: var(--fg);
+  font-size: 15px;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+/* Footer */
+
+.lp-footer {
+  background: var(--bg);
+  color: var(--muted);
+  padding: 32px 32px 56px;
+  border-top: 1px solid var(--border);
+  font-size: 14px;
+}
+
+.lp-footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lp-footer nav { display: flex; gap: 18px; }
+
+/* ── Responsive ───────────────────────────────────────────────────────── */
+
+@media (max-width: 880px) {
+  .lp-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    padding-top: 32px;
+  }
+  .lp-hero-mock { order: -1; }
+  .phone { width: 240px; height: 500px; }
+  .phone-card-text { font-size: 32px; }
+  .lp-steps { grid-template-columns: repeat(2, 1fr); }
+  .lp-research { grid-template-columns: 1fr; }
+  .lp-section { padding: 64px 24px; }
+  .lp-hero { padding: 16px 24px 56px; }
+}
+
+@media (max-width: 520px) {
+  .lp-nav { padding: 16px 20px; }
+  .lp-soon { font-size: 12px; padding: 6px 12px; }
+  .lp-steps { grid-template-columns: 1fr; }
+  .lp-headline { font-size: 38px; }
+  .lp-sub { font-size: 17px; }
 }
